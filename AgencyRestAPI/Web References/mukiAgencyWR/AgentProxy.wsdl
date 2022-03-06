@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AgencyRegistration">
+        <s:complexType />
+      </s:element>
+      <s:element name="AgencyRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgencyRegistrationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAgencyRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAgencyRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAgencyRegistrationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountlistResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoansResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMiniStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMiniStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMiniStatementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetwithdrawableAcc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetwithdrawableAccResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetwithdrawableAccResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAccountBalanceResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentFloat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentFloatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAgentFloatResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountExistResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoanNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoanStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoanStatementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFosaStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFosaStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFosaStatementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionMinAmount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTransactionMinAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTransactionMinAmountResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionMaxAmount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTransactionMaxAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTransactionMaxAmountResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTariffCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTariffCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTariffCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWithdrawalCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWithdrawalChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWithdrawalChargesResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetChargesResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgentTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refrence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgentTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostAgentTransactionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostBranchAgentTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refrence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostBranchAgentTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostBranchAgentTransactionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refrence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertMessagesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAgencyTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trans_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agent_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loan_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Account_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactiontype" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Dob" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhysicallAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="residence" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAgencyTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertAgencyTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AgencyRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:AgencyRegistration" />
+  </wsdl:message>
+  <wsdl:message name="AgencyRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:AgencyRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgencyRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAgencyRegistration" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgencyRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAgencyRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountlistSoapIn">
+    <wsdl:part name="parameters" element="tns:accountlist" />
+  </wsdl:message>
+  <wsdl:message name="accountlistSoapOut">
+    <wsdl:part name="parameters" element="tns:accountlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoans" />
+  </wsdl:message>
+  <wsdl:message name="GetLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMember" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMiniStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMiniStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetMiniStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMiniStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetwithdrawableAccSoapIn">
+    <wsdl:part name="parameters" element="tns:GetwithdrawableAcc" />
+  </wsdl:message>
+  <wsdl:message name="GetwithdrawableAccSoapOut">
+    <wsdl:part name="parameters" element="tns:GetwithdrawableAccResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentFloatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentFloat" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentFloatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentFloatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountExistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountExist" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountExistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoanStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetLoanStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoanStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFosaStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFosaStatement" />
+  </wsdl:message>
+  <wsdl:message name="GetFosaStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFosaStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionMinAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionMinAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionMinAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionMinAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionMaxAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionMaxAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionMaxAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionMaxAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTariffCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTariffCode" />
+  </wsdl:message>
+  <wsdl:message name="GetTariffCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTariffCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWithdrawalChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWithdrawalCharges" />
+  </wsdl:message>
+  <wsdl:message name="GetWithdrawalChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWithdrawalChargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCharges" />
+  </wsdl:message>
+  <wsdl:message name="GetChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAgentTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAgentTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostAgentTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAgentTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostBranchAgentTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostBranchAgentTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostBranchAgentTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostBranchAgentTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertMessages" />
+  </wsdl:message>
+  <wsdl:message name="InsertMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertAgencyTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAgencyTransaction" />
+  </wsdl:message>
+  <wsdl:message name="InsertAgencyTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAgencyTransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgentProxySoap">
+    <wsdl:operation name="AgencyRegistration">
+      <wsdl:input message="tns:AgencyRegistrationSoapIn" />
+      <wsdl:output message="tns:AgencyRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgencyRegistration">
+      <wsdl:input message="tns:UpdateAgencyRegistrationSoapIn" />
+      <wsdl:output message="tns:UpdateAgencyRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountlist">
+      <wsdl:input message="tns:accountlistSoapIn" />
+      <wsdl:output message="tns:accountlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <wsdl:input message="tns:GetLoansSoapIn" />
+      <wsdl:output message="tns:GetLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <wsdl:input message="tns:GetAccountsSoapIn" />
+      <wsdl:output message="tns:GetAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <wsdl:input message="tns:GetMemberSoapIn" />
+      <wsdl:output message="tns:GetMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniStatement">
+      <wsdl:input message="tns:GetMiniStatementSoapIn" />
+      <wsdl:output message="tns:GetMiniStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetwithdrawableAcc">
+      <wsdl:input message="tns:GetwithdrawableAccSoapIn" />
+      <wsdl:output message="tns:GetwithdrawableAccSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <wsdl:input message="tns:GetAccountBalanceSoapIn" />
+      <wsdl:output message="tns:GetAccountBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentFloat">
+      <wsdl:input message="tns:GetAgentFloatSoapIn" />
+      <wsdl:output message="tns:GetAgentFloatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentAccount">
+      <wsdl:input message="tns:GetAgentAccountSoapIn" />
+      <wsdl:output message="tns:GetAgentAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountExist">
+      <wsdl:input message="tns:GetAccountExistSoapIn" />
+      <wsdl:output message="tns:GetAccountExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentTransaction">
+      <wsdl:input message="tns:GetAgentTransactionSoapIn" />
+      <wsdl:output message="tns:GetAgentTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanStatement">
+      <wsdl:input message="tns:GetLoanStatementSoapIn" />
+      <wsdl:output message="tns:GetLoanStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFosaStatement">
+      <wsdl:input message="tns:GetFosaStatementSoapIn" />
+      <wsdl:output message="tns:GetFosaStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMinAmount">
+      <wsdl:input message="tns:GetTransactionMinAmountSoapIn" />
+      <wsdl:output message="tns:GetTransactionMinAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMaxAmount">
+      <wsdl:input message="tns:GetTransactionMaxAmountSoapIn" />
+      <wsdl:output message="tns:GetTransactionMaxAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffCode">
+      <wsdl:input message="tns:GetTariffCodeSoapIn" />
+      <wsdl:output message="tns:GetTariffCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWithdrawalCharges">
+      <wsdl:input message="tns:GetWithdrawalChargesSoapIn" />
+      <wsdl:output message="tns:GetWithdrawalChargesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <wsdl:input message="tns:GetChargesSoapIn" />
+      <wsdl:output message="tns:GetChargesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAgentTransaction">
+      <wsdl:input message="tns:PostAgentTransactionSoapIn" />
+      <wsdl:output message="tns:PostAgentTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostBranchAgentTransaction">
+      <wsdl:input message="tns:PostBranchAgentTransactionSoapIn" />
+      <wsdl:output message="tns:PostBranchAgentTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessages">
+      <wsdl:input message="tns:InsertMessagesSoapIn" />
+      <wsdl:output message="tns:InsertMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgencyTransaction">
+      <wsdl:input message="tns:InsertAgencyTransactionSoapIn" />
+      <wsdl:output message="tns:InsertAgencyTransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgentProxySoap" type="tns:AgentProxySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgencyRegistration">
+      <soap:operation soapAction="http://tempuri.org/AgencyRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgencyRegistration">
+      <soap:operation soapAction="http://tempuri.org/UpdateAgencyRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountlist">
+      <soap:operation soapAction="http://tempuri.org/accountlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <soap:operation soapAction="http://tempuri.org/GetLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://tempuri.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap:operation soapAction="http://tempuri.org/GetMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniStatement">
+      <soap:operation soapAction="http://tempuri.org/GetMiniStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetwithdrawableAcc">
+      <soap:operation soapAction="http://tempuri.org/GetwithdrawableAcc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <soap:operation soapAction="http://tempuri.org/GetAccountBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentFloat">
+      <soap:operation soapAction="http://tempuri.org/GetAgentFloat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentAccount">
+      <soap:operation soapAction="http://tempuri.org/GetAgentAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountExist">
+      <soap:operation soapAction="http://tempuri.org/GetAccountExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentTransaction">
+      <soap:operation soapAction="http://tempuri.org/GetAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanStatement">
+      <soap:operation soapAction="http://tempuri.org/GetLoanStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFosaStatement">
+      <soap:operation soapAction="http://tempuri.org/GetFosaStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMinAmount">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionMinAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMaxAmount">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionMaxAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffCode">
+      <soap:operation soapAction="http://tempuri.org/GetTariffCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWithdrawalCharges">
+      <soap:operation soapAction="http://tempuri.org/GetWithdrawalCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <soap:operation soapAction="http://tempuri.org/GetCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgentTransaction">
+      <soap:operation soapAction="http://tempuri.org/PostAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBranchAgentTransaction">
+      <soap:operation soapAction="http://tempuri.org/PostBranchAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessages">
+      <soap:operation soapAction="http://tempuri.org/InsertMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgencyTransaction">
+      <soap:operation soapAction="http://tempuri.org/InsertAgencyTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgentProxySoap12" type="tns:AgentProxySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AgencyRegistration">
+      <soap12:operation soapAction="http://tempuri.org/AgencyRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgencyRegistration">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAgencyRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountlist">
+      <soap12:operation soapAction="http://tempuri.org/accountlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoans">
+      <soap12:operation soapAction="http://tempuri.org/GetLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccounts">
+      <soap12:operation soapAction="http://tempuri.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap12:operation soapAction="http://tempuri.org/GetMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiniStatement">
+      <soap12:operation soapAction="http://tempuri.org/GetMiniStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetwithdrawableAcc">
+      <soap12:operation soapAction="http://tempuri.org/GetwithdrawableAcc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBalance">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentFloat">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentFloat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentAccount">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountExist">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentTransaction">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanStatement">
+      <soap12:operation soapAction="http://tempuri.org/GetLoanStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFosaStatement">
+      <soap12:operation soapAction="http://tempuri.org/GetFosaStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMinAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionMinAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionMaxAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionMaxAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffCode">
+      <soap12:operation soapAction="http://tempuri.org/GetTariffCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWithdrawalCharges">
+      <soap12:operation soapAction="http://tempuri.org/GetWithdrawalCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharges">
+      <soap12:operation soapAction="http://tempuri.org/GetCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgentTransaction">
+      <soap12:operation soapAction="http://tempuri.org/PostAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBranchAgentTransaction">
+      <soap12:operation soapAction="http://tempuri.org/PostBranchAgentTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessages">
+      <soap12:operation soapAction="http://tempuri.org/InsertMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgencyTransaction">
+      <soap12:operation soapAction="http://tempuri.org/InsertAgencyTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgentProxy">
+    <wsdl:port name="AgentProxySoap" binding="tns:AgentProxySoap">
+      <soap:address location="http://41.90.243.83:8081/agentnew/AgentProxy.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgentProxySoap12" binding="tns:AgentProxySoap12">
+      <soap12:address location="http://41.90.243.83:8081/agentnew/AgentProxy.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

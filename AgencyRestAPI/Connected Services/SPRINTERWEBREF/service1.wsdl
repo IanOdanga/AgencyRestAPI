@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerifySaccoMembership">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySaccoMembershipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifySaccoMembershipResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Memberno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="memberno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MembernoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MembernoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateVerificationCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVerificationCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateVerificationCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendNotificationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisteredMemberDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisteredMemberDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisteredMemberDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdvanceEligibility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdvanceEligibilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdvanceEligibilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberAccountsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PassportPhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PassportPhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PassportPhotoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BosaTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accTO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BosaTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BosaTransferResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaybillTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaybillTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PaybillTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Updatepaybilltransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatepaybilltransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatepaybilltransactionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSFromNav">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthoKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSFromNavResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSFromNavResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="B2CAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accTO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tranID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="B2CAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="B2CAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawCash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accNAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accTO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawCashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WithdrawCashResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AirtimePurchase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceipientNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceProvider" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProviderID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AirtimePurchaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AirtimePurchaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FosaTransfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accTO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FosaTransferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FosaTransferResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPaybill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPaybillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertPaybillResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAdvance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAdvanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostAdvanceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ministatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MinistatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MinistatementResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanCalculator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanCalculatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoanCalculatorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoanStatusResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoansGuaranteed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoansGuaranteedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoansGuaranteedResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanGuarantors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanGuarantorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoanGuarantorsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetailedStatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="last" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Corporate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetailedStatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DetailedStatementResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Balance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BalanceResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrentLoansAPP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrentLoansAPPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CurrentLoansAPPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrentLoans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrentLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CurrentLoansResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloudCommission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloudCommissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CloudCommissionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanRepayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accFROM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loanNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoanRepaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoanRepaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSSAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saccoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSSAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSSAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerifySaccoMembershipSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifySaccoMembership" />
+  </wsdl:message>
+  <wsdl:message name="VerifySaccoMembershipSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifySaccoMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="MembernoSoapIn">
+    <wsdl:part name="parameters" element="tns:Memberno" />
+  </wsdl:message>
+  <wsdl:message name="MembernoSoapOut">
+    <wsdl:part name="parameters" element="tns:MembernoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVerificationCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVerificationCode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVerificationCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVerificationCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendNotification" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisteredMemberDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisteredMemberDetails" />
+  </wsdl:message>
+  <wsdl:message name="RegisteredMemberDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisteredMemberDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdvanceEligibilitySoapIn">
+    <wsdl:part name="parameters" element="tns:AdvanceEligibility" />
+  </wsdl:message>
+  <wsdl:message name="AdvanceEligibilitySoapOut">
+    <wsdl:part name="parameters" element="tns:AdvanceEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberAccounts" />
+  </wsdl:message>
+  <wsdl:message name="MemberAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PassportPhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:PassportPhoto" />
+  </wsdl:message>
+  <wsdl:message name="PassportPhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:PassportPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BosaTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:BosaTransfer" />
+  </wsdl:message>
+  <wsdl:message name="BosaTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:BosaTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaybillTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:PaybillTransactions" />
+  </wsdl:message>
+  <wsdl:message name="PaybillTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:PaybillTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatepaybilltransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:Updatepaybilltransaction" />
+  </wsdl:message>
+  <wsdl:message name="UpdatepaybilltransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatepaybilltransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSFromNavSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSFromNav" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSFromNavSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSFromNavResponse" />
+  </wsdl:message>
+  <wsdl:message name="B2CAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:B2CAccount" />
+  </wsdl:message>
+  <wsdl:message name="B2CAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:B2CAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawCashSoapIn">
+    <wsdl:part name="parameters" element="tns:WithdrawCash" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawCashSoapOut">
+    <wsdl:part name="parameters" element="tns:WithdrawCashResponse" />
+  </wsdl:message>
+  <wsdl:message name="AirtimePurchaseSoapIn">
+    <wsdl:part name="parameters" element="tns:AirtimePurchase" />
+  </wsdl:message>
+  <wsdl:message name="AirtimePurchaseSoapOut">
+    <wsdl:part name="parameters" element="tns:AirtimePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="FosaTransferSoapIn">
+    <wsdl:part name="parameters" element="tns:FosaTransfer" />
+  </wsdl:message>
+  <wsdl:message name="FosaTransferSoapOut">
+    <wsdl:part name="parameters" element="tns:FosaTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPaybillSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPaybill" />
+  </wsdl:message>
+  <wsdl:message name="InsertPaybillSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPaybillResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAdvanceSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAdvance" />
+  </wsdl:message>
+  <wsdl:message name="PostAdvanceSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAdvanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MinistatementSoapIn">
+    <wsdl:part name="parameters" element="tns:Ministatement" />
+  </wsdl:message>
+  <wsdl:message name="MinistatementSoapOut">
+    <wsdl:part name="parameters" element="tns:MinistatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoanCalculatorSoapIn">
+    <wsdl:part name="parameters" element="tns:LoanCalculator" />
+  </wsdl:message>
+  <wsdl:message name="LoanCalculatorSoapOut">
+    <wsdl:part name="parameters" element="tns:LoanCalculatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoanStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:LoanStatus" />
+  </wsdl:message>
+  <wsdl:message name="LoanStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:LoanStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoansGuaranteedSoapIn">
+    <wsdl:part name="parameters" element="tns:LoansGuaranteed" />
+  </wsdl:message>
+  <wsdl:message name="LoansGuaranteedSoapOut">
+    <wsdl:part name="parameters" element="tns:LoansGuaranteedResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoanGuarantorsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoanGuarantors" />
+  </wsdl:message>
+  <wsdl:message name="LoanGuarantorsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoanGuarantorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DetailedStatementSoapIn">
+    <wsdl:part name="parameters" element="tns:DetailedStatement" />
+  </wsdl:message>
+  <wsdl:message name="DetailedStatementSoapOut">
+    <wsdl:part name="parameters" element="tns:DetailedStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="BalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Balance" />
+  </wsdl:message>
+  <wsdl:message name="BalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:BalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CurrentLoansAPPSoapIn">
+    <wsdl:part name="parameters" element="tns:CurrentLoansAPP" />
+  </wsdl:message>
+  <wsdl:message name="CurrentLoansAPPSoapOut">
+    <wsdl:part name="parameters" element="tns:CurrentLoansAPPResponse" />
+  </wsdl:message>
+  <wsdl:message name="CurrentLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:CurrentLoans" />
+  </wsdl:message>
+  <wsdl:message name="CurrentLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:CurrentLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloudCommissionSoapIn">
+    <wsdl:part name="parameters" element="tns:CloudCommission" />
+  </wsdl:message>
+  <wsdl:message name="CloudCommissionSoapOut">
+    <wsdl:part name="parameters" element="tns:CloudCommissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoanRepaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:LoanRepayment" />
+  </wsdl:message>
+  <wsdl:message name="LoanRepaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:LoanRepaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSSAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:WSSAccount" />
+  </wsdl:message>
+  <wsdl:message name="WSSAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:WSSAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="VerifySaccoMembership">
+      <wsdl:input message="tns:VerifySaccoMembershipSoapIn" />
+      <wsdl:output message="tns:VerifySaccoMembershipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Memberno">
+      <wsdl:input message="tns:MembernoSoapIn" />
+      <wsdl:output message="tns:MembernoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVerificationCode">
+      <wsdl:input message="tns:UpdateVerificationCodeSoapIn" />
+      <wsdl:output message="tns:UpdateVerificationCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotification">
+      <wsdl:input message="tns:SendNotificationSoapIn" />
+      <wsdl:output message="tns:SendNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCode">
+      <wsdl:input message="tns:ValidateCodeSoapIn" />
+      <wsdl:output message="tns:ValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredMemberDetails">
+      <wsdl:input message="tns:RegisteredMemberDetailsSoapIn" />
+      <wsdl:output message="tns:RegisteredMemberDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceEligibility">
+      <wsdl:input message="tns:AdvanceEligibilitySoapIn" />
+      <wsdl:output message="tns:AdvanceEligibilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberAccounts">
+      <wsdl:input message="tns:MemberAccountsSoapIn" />
+      <wsdl:output message="tns:MemberAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PassportPhoto">
+      <wsdl:input message="tns:PassportPhotoSoapIn" />
+      <wsdl:output message="tns:PassportPhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BosaTransfer">
+      <wsdl:input message="tns:BosaTransferSoapIn" />
+      <wsdl:output message="tns:BosaTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaybillTransactions">
+      <wsdl:input message="tns:PaybillTransactionsSoapIn" />
+      <wsdl:output message="tns:PaybillTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Updatepaybilltransaction">
+      <wsdl:input message="tns:UpdatepaybilltransactionSoapIn" />
+      <wsdl:output message="tns:UpdatepaybilltransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSFromNav">
+      <wsdl:input message="tns:SendSMSFromNavSoapIn" />
+      <wsdl:output message="tns:SendSMSFromNavSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="B2CAccount">
+      <wsdl:input message="tns:B2CAccountSoapIn" />
+      <wsdl:output message="tns:B2CAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawCash">
+      <wsdl:input message="tns:WithdrawCashSoapIn" />
+      <wsdl:output message="tns:WithdrawCashSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AirtimePurchase">
+      <wsdl:input message="tns:AirtimePurchaseSoapIn" />
+      <wsdl:output message="tns:AirtimePurchaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FosaTransfer">
+      <wsdl:input message="tns:FosaTransferSoapIn" />
+      <wsdl:output message="tns:FosaTransferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPaybill">
+      <wsdl:input message="tns:InsertPaybillSoapIn" />
+      <wsdl:output message="tns:InsertPaybillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAdvance">
+      <wsdl:input message="tns:PostAdvanceSoapIn" />
+      <wsdl:output message="tns:PostAdvanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ministatement">
+      <wsdl:input message="tns:MinistatementSoapIn" />
+      <wsdl:output message="tns:MinistatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanCalculator">
+      <wsdl:input message="tns:LoanCalculatorSoapIn" />
+      <wsdl:output message="tns:LoanCalculatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanStatus">
+      <wsdl:input message="tns:LoanStatusSoapIn" />
+      <wsdl:output message="tns:LoanStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoansGuaranteed">
+      <wsdl:input message="tns:LoansGuaranteedSoapIn" />
+      <wsdl:output message="tns:LoansGuaranteedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanGuarantors">
+      <wsdl:input message="tns:LoanGuarantorsSoapIn" />
+      <wsdl:output message="tns:LoanGuarantorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DetailedStatement">
+      <wsdl:input message="tns:DetailedStatementSoapIn" />
+      <wsdl:output message="tns:DetailedStatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <wsdl:input message="tns:BalanceSoapIn" />
+      <wsdl:output message="tns:BalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoansAPP">
+      <wsdl:input message="tns:CurrentLoansAPPSoapIn" />
+      <wsdl:output message="tns:CurrentLoansAPPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoans">
+      <wsdl:input message="tns:CurrentLoansSoapIn" />
+      <wsdl:output message="tns:CurrentLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloudCommission">
+      <wsdl:input message="tns:CloudCommissionSoapIn" />
+      <wsdl:output message="tns:CloudCommissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanRepayment">
+      <wsdl:input message="tns:LoanRepaymentSoapIn" />
+      <wsdl:output message="tns:LoanRepaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSSAccount">
+      <wsdl:input message="tns:WSSAccountSoapIn" />
+      <wsdl:output message="tns:WSSAccountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifySaccoMembership">
+      <soap:operation soapAction="http://tempuri.org/VerifySaccoMembership" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Memberno">
+      <soap:operation soapAction="http://tempuri.org/Memberno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVerificationCode">
+      <soap:operation soapAction="http://tempuri.org/UpdateVerificationCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotification">
+      <soap:operation soapAction="http://tempuri.org/SendNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCode">
+      <soap:operation soapAction="http://tempuri.org/ValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredMemberDetails">
+      <soap:operation soapAction="http://tempuri.org/RegisteredMemberDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceEligibility">
+      <soap:operation soapAction="http://tempuri.org/AdvanceEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberAccounts">
+      <soap:operation soapAction="http://tempuri.org/MemberAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PassportPhoto">
+      <soap:operation soapAction="http://tempuri.org/PassportPhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BosaTransfer">
+      <soap:operation soapAction="http://tempuri.org/BosaTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaybillTransactions">
+      <soap:operation soapAction="http://tempuri.org/PaybillTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updatepaybilltransaction">
+      <soap:operation soapAction="http://tempuri.org/Updatepaybilltransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSFromNav">
+      <soap:operation soapAction="http://tempuri.org/SendSMSFromNav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="B2CAccount">
+      <soap:operation soapAction="http://tempuri.org/B2CAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawCash">
+      <soap:operation soapAction="http://tempuri.org/WithdrawCash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AirtimePurchase">
+      <soap:operation soapAction="http://tempuri.org/AirtimePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FosaTransfer">
+      <soap:operation soapAction="http://tempuri.org/FosaTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPaybill">
+      <soap:operation soapAction="http://tempuri.org/InsertPaybill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAdvance">
+      <soap:operation soapAction="http://tempuri.org/PostAdvance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ministatement">
+      <soap:operation soapAction="http://tempuri.org/Ministatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanCalculator">
+      <soap:operation soapAction="http://tempuri.org/LoanCalculator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanStatus">
+      <soap:operation soapAction="http://tempuri.org/LoanStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoansGuaranteed">
+      <soap:operation soapAction="http://tempuri.org/LoansGuaranteed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanGuarantors">
+      <soap:operation soapAction="http://tempuri.org/LoanGuarantors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetailedStatement">
+      <soap:operation soapAction="http://tempuri.org/DetailedStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <soap:operation soapAction="http://tempuri.org/Balance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoansAPP">
+      <soap:operation soapAction="http://tempuri.org/CurrentLoansAPP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoans">
+      <soap:operation soapAction="http://tempuri.org/CurrentLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloudCommission">
+      <soap:operation soapAction="http://tempuri.org/CloudCommission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanRepayment">
+      <soap:operation soapAction="http://tempuri.org/LoanRepayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSSAccount">
+      <soap:operation soapAction="http://tempuri.org/WSSAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifySaccoMembership">
+      <soap12:operation soapAction="http://tempuri.org/VerifySaccoMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Memberno">
+      <soap12:operation soapAction="http://tempuri.org/Memberno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVerificationCode">
+      <soap12:operation soapAction="http://tempuri.org/UpdateVerificationCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotification">
+      <soap12:operation soapAction="http://tempuri.org/SendNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCode">
+      <soap12:operation soapAction="http://tempuri.org/ValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisteredMemberDetails">
+      <soap12:operation soapAction="http://tempuri.org/RegisteredMemberDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceEligibility">
+      <soap12:operation soapAction="http://tempuri.org/AdvanceEligibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberAccounts">
+      <soap12:operation soapAction="http://tempuri.org/MemberAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PassportPhoto">
+      <soap12:operation soapAction="http://tempuri.org/PassportPhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BosaTransfer">
+      <soap12:operation soapAction="http://tempuri.org/BosaTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaybillTransactions">
+      <soap12:operation soapAction="http://tempuri.org/PaybillTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updatepaybilltransaction">
+      <soap12:operation soapAction="http://tempuri.org/Updatepaybilltransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSFromNav">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSFromNav" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="B2CAccount">
+      <soap12:operation soapAction="http://tempuri.org/B2CAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawCash">
+      <soap12:operation soapAction="http://tempuri.org/WithdrawCash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AirtimePurchase">
+      <soap12:operation soapAction="http://tempuri.org/AirtimePurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FosaTransfer">
+      <soap12:operation soapAction="http://tempuri.org/FosaTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPaybill">
+      <soap12:operation soapAction="http://tempuri.org/InsertPaybill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAdvance">
+      <soap12:operation soapAction="http://tempuri.org/PostAdvance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ministatement">
+      <soap12:operation soapAction="http://tempuri.org/Ministatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanCalculator">
+      <soap12:operation soapAction="http://tempuri.org/LoanCalculator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanStatus">
+      <soap12:operation soapAction="http://tempuri.org/LoanStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoansGuaranteed">
+      <soap12:operation soapAction="http://tempuri.org/LoansGuaranteed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanGuarantors">
+      <soap12:operation soapAction="http://tempuri.org/LoanGuarantors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetailedStatement">
+      <soap12:operation soapAction="http://tempuri.org/DetailedStatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <soap12:operation soapAction="http://tempuri.org/Balance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoansAPP">
+      <soap12:operation soapAction="http://tempuri.org/CurrentLoansAPP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrentLoans">
+      <soap12:operation soapAction="http://tempuri.org/CurrentLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloudCommission">
+      <soap12:operation soapAction="http://tempuri.org/CloudCommission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanRepayment">
+      <soap12:operation soapAction="http://tempuri.org/LoanRepayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSSAccount">
+      <soap12:operation soapAction="http://tempuri.org/WSSAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="https://suresms.co.ke:45322/navtranssms/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="https://suresms.co.ke:45322/navtranssms/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
